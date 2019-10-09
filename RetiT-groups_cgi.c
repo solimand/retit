@@ -19,6 +19,7 @@ void main(int argc, char**argv) {
         char line[2048];
         char matricola[5][100];
         char finesezione[256];
+        int studentNumber=0;
 
         for(int i=0; i<5; i++){
                 gets(line); /* ---------------------------xxxx */
@@ -27,7 +28,14 @@ void main(int argc, char**argv) {
                 gets(matricola[i]); matricola[i][strlen(matricola[i])-1]='\0';
         }
 
-        for(int i=0; i<5; i++){
+        if(strcmp(matricola[4],"")==0){
+                studentNumber=4;
+        } else {
+                studentNumber=5;
+        }
+
+
+        for(int i=0; i<studentNumber; i++){
                 if (checkStud(matricola[i], "../Courses/RetiT/iscrizioni/ListaFinale.txt")<0){ //matricola non trovata nella lista iscritti
                         generateHTMLNotInListFailure(matricola[i]);
                         return;
