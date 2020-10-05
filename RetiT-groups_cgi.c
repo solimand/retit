@@ -28,7 +28,17 @@ void main(int argc, char**argv) {
                 gets(matricola[i]); matricola[i][strlen(matricola[i])-1]='\0';
         }
 
-        if(strcmp(matricola[4],"")==0){
+
+        if(strcmp(matricola[1],"")==0 && strcmp(matricola[2],"")==0 && strcmp(matricola[3],"")==0  && strcmp(matricola[4],"")==0 ){
+                studentNumber=1;
+        } 
+        if(strcmp(matricola[2],"")==0 && strcmp(matricola[3],"")==0  && strcmp(matricola[4],"")==0 ){
+                studentNumber=2;
+        } 
+        else if(strcmp(matricola[3],"")==0 && strcmp(matricola[4],"")==0){
+                studentNumber=3;
+        } 
+        else if(strcmp(matricola[4],"")==0){
                 studentNumber=4;
         } else {
                 studentNumber=5;
